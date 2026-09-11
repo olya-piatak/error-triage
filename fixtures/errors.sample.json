@@ -1,0 +1,222 @@
+[
+  {
+    "id": "evt_01J7A0C3K9M2N4P6Q8R1S3T5V7",
+    "timestamp": "2026-09-10T07:12:44.120Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.8f3a1c2d.js:2:41233)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart?promo=SUMMER24",
+    "userId": "u_1042",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A0D8H2K4M6N8P0Q2R4S6T8",
+    "timestamp": "2026-09-10T07:15:02.877Z",
+    "message": "Request failed with status code 502 (GET /api/orders/88213)",
+    "stack": "Error: Request failed with status code 502 (GET /api/orders/88213)\n    at createError (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88123)\n    at settle (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88490)\n    at XMLHttpRequest.onloadend (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:87301)",
+    "url": "https://shop.example.com/orders/88213",
+    "userId": "u_2210",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Safari 17" }
+  },
+  {
+    "id": "evt_01J7A0F1Z3X5C7V9B1N3M5Q7W9",
+    "timestamp": "2026-09-10T07:15:09.401Z",
+    "message": "Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)",
+    "stack": "PrismaClientKnownRequestError: Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)\n    at Ir.handleRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:7315)\n    at Ir.handleAndLogRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:6640)\n    at Ir.request (/app/node_modules/@prisma/client/runtime/library.js:121:6347)",
+    "url": "/api/orders/88213",
+    "tags": { "env": "production", "service": "orders-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0G4A6S8D0F2G4H6J8K0L2",
+    "timestamp": "2026-09-10T07:16:31.009Z",
+    "message": "Request failed with status code 502 (GET /api/orders/88219)",
+    "stack": "Error: Request failed with status code 502 (GET /api/orders/88219)\n    at createError (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88123)\n    at settle (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88490)\n    at XMLHttpRequest.onloadend (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:87301)",
+    "url": "https://shop.example.com/orders/88219?tab=shipping",
+    "userId": "u_0977",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A0H7Q9W1E3R5T7Y9U1I3O5",
+    "timestamp": "2026-09-10T07:16:35.552Z",
+    "message": "Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)",
+    "stack": "PrismaClientKnownRequestError: Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)\n    at Ir.handleRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:7315)\n    at Ir.handleAndLogRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:6640)\n    at Ir.request (/app/node_modules/@prisma/client/runtime/library.js:121:6347)",
+    "url": "/api/orders/88219",
+    "tags": { "env": "production", "service": "orders-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0J2P4A6S8D0F2G4H6J8K0",
+    "timestamp": "2026-09-10T08:03:18.230Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.8f3a1c2d.js:2:41233)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart",
+    "userId": "u_3318",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Firefox 130" }
+  },
+  {
+    "id": "evt_01J7A0K5L7Z9X1C3V5B7N9M1Q3",
+    "timestamp": "2026-09-10T08:41:57.918Z",
+    "message": "Loading chunk 4821 failed.\n(error: https://cdn.example.com/static/js/4821.a3f9c2e1.js)",
+    "stack": "ChunkLoadError: Loading chunk 4821 failed.\n(error: https://cdn.example.com/static/js/4821.a3f9c2e1.js)\n    at Object.__webpack_require__.f.j (https://shop.example.com/static/js/main.8f3a1c2d.js:1:2213)\n    at https://shop.example.com/static/js/main.8f3a1c2d.js:1:1140\n    at Array.reduce (<anonymous>)",
+    "url": "https://shop.example.com/account/orders",
+    "userId": "u_1290",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Chrome 127" }
+  },
+  {
+    "id": "evt_01J7A0M8W0E2R4T6Y8U0I2O4P6",
+    "timestamp": "2026-09-10T09:20:03.004Z",
+    "message": "connect ECONNREFUSED 10.0.3.17:6379",
+    "stack": "Error: connect ECONNREFUSED 10.0.3.17:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+    "url": "/api/checkout/session",
+    "tags": { "env": "production", "service": "checkout-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0N1A3S5D7F9G1H3J5K7L9",
+    "timestamp": "2026-09-10T09:20:04.311Z",
+    "message": "connect ECONNREFUSED 10.0.3.17:6379",
+    "stack": "Error: connect ECONNREFUSED 10.0.3.17:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+    "url": "/api/checkout/session",
+    "tags": { "env": "production", "service": "checkout-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0P4Q6W8E0R2T4Y6U8I0O2",
+    "timestamp": "2026-09-10T10:05:40.660Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.8f3a1c2d.js:2:41233)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart?promo=WELCOME10",
+    "userId": "u_4471",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A0Q7Z9X1C3V5B7N9M1Q3W5",
+    "timestamp": "2026-09-10T10:44:12.087Z",
+    "message": "jwt expired",
+    "stack": "JsonWebTokenError: jwt expired\n    at Object.module.exports [as verify] (/app/node_modules/jsonwebtoken/verify.js:190:21)\n    at authenticate (/app/dist/middleware/auth.js:27:22)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)",
+    "url": "/api/account/me",
+    "userId": "u_0512",
+    "tags": { "env": "production", "service": "accounts-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0R0L2P4A6S8D0F2G4H6J8",
+    "timestamp": "2026-09-10T11:31:55.712Z",
+    "message": "Loading chunk 3307 failed.\n(error: https://cdn.example.com/static/js/3307.7c1d0b52.js)",
+    "stack": "ChunkLoadError: Loading chunk 3307 failed.\n(error: https://cdn.example.com/static/js/3307.7c1d0b52.js)\n    at Object.__webpack_require__.f.j (https://shop.example.com/static/js/main.8f3a1c2d.js:1:2213)\n    at https://shop.example.com/static/js/main.8f3a1c2d.js:1:1140\n    at Array.reduce (<anonymous>)",
+    "url": "https://shop.example.com/checkout",
+    "userId": "u_2210",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Safari 17" }
+  },
+  {
+    "id": "evt_01J7A0S3W5E7R9T1Y3U5I7O9P1",
+    "timestamp": "2026-09-10T12:02:29.339Z",
+    "message": "Request failed with status code 502 (GET /api/orders/88304)",
+    "stack": "Error: Request failed with status code 502 (GET /api/orders/88304)\n    at createError (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88123)\n    at settle (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88490)\n    at XMLHttpRequest.onloadend (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:87301)",
+    "url": "https://shop.example.com/orders/88304",
+    "userId": "u_5120",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Edge 128" }
+  },
+  {
+    "id": "evt_01J7A0T6A8S0D2F4G6H8J0K2L4",
+    "timestamp": "2026-09-10T12:02:33.980Z",
+    "message": "Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)",
+    "stack": "PrismaClientKnownRequestError: Timed out fetching a new connection from the connection pool. (More info: http://pris.ly/d/connection-pool (Current connection pool size: 10, connection limit: 10)\n    at Ir.handleRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:7315)\n    at Ir.handleAndLogRequestError (/app/node_modules/@prisma/client/runtime/library.js:121:6640)\n    at Ir.request (/app/node_modules/@prisma/client/runtime/library.js:121:6347)",
+    "url": "/api/orders/88304",
+    "tags": { "env": "production", "service": "orders-api", "release": "2026.09.10-3" }
+  },
+  {
+    "id": "evt_01J7A0V9Q1W3E5R7T9Y1U3I5O7",
+    "timestamp": "2026-09-10T13:17:08.445Z",
+    "message": "Hydration failed because the initial UI does not match what was rendered on the server.",
+    "stack": "Error: Hydration failed because the initial UI does not match what was rendered on the server.\n    at throwOnHydrationMismatch (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:201344)\n    at tryToClaimNextHydratableInstance (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:202011)\n    at updateHostComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:230877)",
+    "url": "https://shop.example.com/products/hiking-boots-42",
+    "userId": "u_6603",
+    "tags": { "env": "production", "release": "2026.09.10-3", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A0W2Z4X6C8V0B2N4M6Q8W0",
+    "timestamp": "2026-09-10T14:55:21.126Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.9a4b2d3e.js:2:41310)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart",
+    "userId": "u_1042",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A0X5L7P9A1S3D5F7G9H1J3",
+    "timestamp": "2026-09-10T15:40:47.803Z",
+    "message": "Request failed with status code 502 (GET /api/orders/88377)",
+    "stack": "Error: Request failed with status code 502 (GET /api/orders/88377)\n    at createError (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88123)\n    at settle (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88490)\n    at XMLHttpRequest.onloadend (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:87301)",
+    "url": "https://shop.example.com/orders/88377",
+    "userId": "u_3318",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Firefox 130" }
+  },
+  {
+    "id": "evt_01J7A0Y8W0E2R4T6Y8U0I2O4P6",
+    "timestamp": "2026-09-10T16:12:03.550Z",
+    "message": "Invalid time value",
+    "stack": "RangeError: Invalid time value\n    at Date.toISOString (<anonymous>)\n    at formatDate (https://shop.example.com/static/js/main.9a4b2d3e.js:2:18877)\n    at OrderRow (https://shop.example.com/static/js/main.9a4b2d3e.js:2:52310)",
+    "url": "https://shop.example.com/account/orders",
+    "userId": "u_7781",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Safari 16" }
+  },
+  {
+    "id": "evt_01J7A0Z1A3S5D7F9G1H3J5K7L9",
+    "timestamp": "2026-09-10T17:28:36.271Z",
+    "message": "Loading chunk 4821 failed.\n(error: https://cdn.example.com/static/js/4821.b71e4d90.js)",
+    "stack": "ChunkLoadError: Loading chunk 4821 failed.\n(error: https://cdn.example.com/static/js/4821.b71e4d90.js)\n    at Object.__webpack_require__.f.j (https://shop.example.com/static/js/main.9a4b2d3e.js:1:2213)\n    at https://shop.example.com/static/js/main.9a4b2d3e.js:1:1140\n    at Array.reduce (<anonymous>)",
+    "url": "https://shop.example.com/account/orders",
+    "userId": "u_1290",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 127" }
+  },
+  {
+    "id": "evt_01J7A104Q6W8E0R2T4Y6U8I0O2",
+    "timestamp": "2026-09-10T18:49:59.914Z",
+    "message": "No such payment_intent: 'pi_3Nx8Kq2eZvKYlo2C1abcdefg'",
+    "stack": "StripeInvalidRequestError: No such payment_intent: 'pi_3Nx8Kq2eZvKYlo2C1abcdefg'\n    at StripeResource._makeRequest (/app/node_modules/stripe/cjs/StripeResource.js:110:29)\n    at confirmPayment (/app/dist/checkout/payment.service.js:58:20)\n    at PaymentController.confirm (/app/dist/checkout/payment.controller.js:33:9)",
+    "url": "/api/checkout/confirm",
+    "userId": "u_8842",
+    "tags": { "env": "production", "service": "checkout-api", "release": "2026.09.10-4" }
+  },
+  {
+    "id": "evt_01J7A117Z9X1C3V5B7N9M1Q3W5",
+    "timestamp": "2026-09-10T20:03:14.108Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.9a4b2d3e.js:2:41310)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart?promo=SUMMER24",
+    "userId": "u_9015",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A120L2P4A6S8D0F2G4H6J8",
+    "timestamp": "2026-09-10T21:37:41.633Z",
+    "message": "jwt expired",
+    "stack": "JsonWebTokenError: jwt expired\n    at Object.module.exports [as verify] (/app/node_modules/jsonwebtoken/verify.js:190:21)\n    at authenticate (/app/dist/middleware/auth.js:27:22)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)",
+    "url": "/api/account/orders",
+    "userId": "u_2210",
+    "tags": { "env": "production", "service": "accounts-api", "release": "2026.09.10-4" }
+  },
+  {
+    "id": "evt_01J7A133W5E7R9T1Y3U5I7O9P1",
+    "timestamp": "2026-09-11T01:14:20.470Z",
+    "message": "Loading chunk 1190 failed.\n(error: https://cdn.example.com/static/js/1190.5e2fa8c3.js)",
+    "stack": "ChunkLoadError: Loading chunk 1190 failed.\n(error: https://cdn.example.com/static/js/1190.5e2fa8c3.js)\n    at Object.__webpack_require__.f.j (https://shop.example.com/static/js/main.9a4b2d3e.js:1:2213)\n    at https://shop.example.com/static/js/main.9a4b2d3e.js:1:1140\n    at Array.reduce (<anonymous>)",
+    "url": "https://shop.example.com/products/trail-jacket-07",
+    "userId": "u_0341",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A146A8S0D2F4G6H8J0K2L4",
+    "timestamp": "2026-09-11T04:58:06.955Z",
+    "message": "Request failed with status code 502 (GET /api/orders/88402)",
+    "stack": "Error: Request failed with status code 502 (GET /api/orders/88402)\n    at createError (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88123)\n    at settle (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:88490)\n    at XMLHttpRequest.onloadend (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:87301)",
+    "url": "https://shop.example.com/orders/88402",
+    "userId": "u_0977",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 128" }
+  },
+  {
+    "id": "evt_01J7A159Q1W3E5R7T9Y1U3I5O7",
+    "timestamp": "2026-09-11T06:21:48.302Z",
+    "message": "Cannot read properties of undefined (reading 'items')",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'items')\n    at CartSummary (https://shop.example.com/static/js/main.9a4b2d3e.js:2:41310)\n    at renderWithHooks (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:120344)\n    at updateFunctionComponent (https://shop.example.com/static/js/vendor.3b9e0f11.js:1:123877)",
+    "url": "https://shop.example.com/cart",
+    "userId": "u_4471",
+    "tags": { "env": "production", "release": "2026.09.10-4", "browser": "Chrome 128" }
+  }
+]

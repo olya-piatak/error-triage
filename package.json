@@ -1,0 +1,41 @@
+{
+  "name": "error-triage",
+  "version": "0.1.0",
+  "description": "Pull recent production errors, group them, let an LLM prioritise them, post one daily report to Slack.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Olya Piatak",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "bin": {
+    "error-triage": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "fixtures"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "demo": "tsc -p tsconfig.json && node dist/index.js demo",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "zod": "^4.6.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.2",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^4.1.11"
+  }
+}

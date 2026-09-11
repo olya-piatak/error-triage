@@ -1,0 +1,81 @@
+name: Daily error triage
+
+on:
+  schedule:
+    # 07:00 UTC every day
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      since:
+        description: 'Look-back window, e.g. 24h or 3d'
+        default: '24h'
+        type: string
+      dry_run:
+        description: 'Print the report instead of posting to Slack'
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: error-triage
+  cancel-in-progress: false
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # The state file powers the "NEW" marker. Each run saves it under a fresh
+      # key; the next run restores the most recent one via the prefix.
+      - name: Restore previous fingerprints
+        uses: actions/cache@v4
+        with:
+          path: .triage-state.json
+          key: triage-state-${{ github.run_id }}
+          restore-keys: |
+            triage-state-
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Run triage
+        run: >
+          node dist/index.js run
+          --since "${{ inputs.since || '24h' }}"
+          ${{ inputs.dry_run && '--dry-run' || '' }}
+          --out report.md
+        env:
+          # Non-secret settings live in repository variables (Settings > Variables).
+          SOURCE: ${{ vars.SOURCE }}
+          POSTHOG_HOST: ${{ vars.POSTHOG_HOST }}
+          POSTHOG_PROJECT_ID: ${{ vars.POSTHOG_PROJECT_ID }}
+          SENTRY_BASE_URL: ${{ vars.SENTRY_BASE_URL }}
+          SENTRY_ORG: ${{ vars.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ vars.SENTRY_PROJECT }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          REPORT_TIMEZONE: ${{ vars.REPORT_TIMEZONE }}
+          MAX_GROUPS: ${{ vars.MAX_GROUPS }}
+          # Credentials live in repository secrets (Settings > Secrets).
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Keep the report as a build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: triage-report
+          path: report.md
+          if-no-files-found: ignore
+          retention-days: 14
