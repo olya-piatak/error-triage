@@ -136,13 +136,13 @@ function countLabel(group: ErrorGroup): string {
 function exampleLine(group: ErrorGroup): string {
   const first = group.sample.message.split('\n')[0] ?? '';
   const text = first.length > EXAMPLE_LIMIT ? `${first.slice(0, EXAMPLE_LIMIT)}...` : first;
-  return group.sample.url ? `${text} — ${group.sample.url}` : text;
+  return group.sample.url ? `${text} at ${group.sample.url}` : text;
 }
 
 export function renderMarkdown(model: ReportModel): string {
   const tz = model.timezone;
   const lines: string[] = [
-    `# Error triage — ${formatDateTime(model.generatedAt, tz)} ${tz} (last ${model.windowLabel})`,
+    `# Error triage, ${formatDateTime(model.generatedAt, tz)} ${tz} (last ${model.windowLabel})`,
     '',
     statsLine(model),
     `Severity: ${severityLine(model)}`,
@@ -154,7 +154,7 @@ export function renderMarkdown(model: ReportModel): string {
   for (const { group, triage, isNew } of model.items) {
     const marker = isNew ? ` **${NEW_MARKER}**` : '';
     lines.push(
-      `## ${triage.severity} — ${triage.title}${marker}`,
+      `## ${triage.severity}: ${triage.title}${marker}`,
       '',
       `- **Count:** ${countLabel(group)} · **First seen:** ${formatDateTime(group.firstSeen, tz)} · **Last seen:** ${formatDateTime(group.lastSeen, tz)}`,
       `- **Owner:** ${triage.suggestedOwner}`,

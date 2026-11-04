@@ -52,9 +52,9 @@ describe('pipeline on fixture data with the stub model', () => {
     expect(result.triage.items).toHaveLength(9);
     expect(result.model.totals.bySeverity).toEqual({ P1: 4, P2: 2, P3: 3 });
 
-    expect(result.markdown).toContain('# Error triage — 2026-09-11 07:00 UTC (last 24h)');
+    expect(result.markdown).toContain('# Error triage, 2026-09-11 07:00 UTC (last 24h)');
     expect(result.markdown).toContain('25 occurrences in 9 groups');
-    expect(result.markdown.match(/^## P1 — /gm)).toHaveLength(4);
+    expect(result.markdown.match(/^## P1: /gm)).toHaveLength(4);
     expect(result.slack.blocks).toHaveLength(4 + 9);
     expect(fetch).not.toHaveBeenCalled();
   });
@@ -80,10 +80,10 @@ describe('CLI', () => {
 
     expect(code).toBe(0);
     const text = output();
-    expect(text).toMatch(/^# Error triage — \d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC \(last 24h\)/);
+    expect(text).toMatch(/^# Error triage, \d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC \(last 24h\)/);
     expect(text).toContain('Source: json · 25 occurrences in 9 groups');
-    expect(text).toContain("## P2 — Cannot read properties of undefined (reading 'items')");
-    expect(text).toContain('## P1 — connect ECONNREFUSED 10.0.3.17:6379');
+    expect(text).toContain("## P2: Cannot read properties of undefined (reading 'items')");
+    expect(text).toContain('## P1: connect ECONNREFUSED 10.0.3.17:6379');
     expect(fetch).not.toHaveBeenCalled();
   });
 
@@ -117,8 +117,8 @@ describe('CLI', () => {
     expect(code).toBe(0);
     const text = output();
     expect(text).toContain('8 new since last run');
-    expect(text).toContain("## P2 — Cannot read properties of undefined (reading 'items')\n");
-    expect(text).toContain('## P1 — connect ECONNREFUSED 10.0.3.17:6379 **NEW**');
+    expect(text).toContain("## P2: Cannot read properties of undefined (reading 'items')\n");
+    expect(text).toContain('## P1: connect ECONNREFUSED 10.0.3.17:6379 **NEW**');
     expect(text).toContain('"blocks"');
     expect(fetch).not.toHaveBeenCalled();
   });

@@ -87,14 +87,14 @@ describe('formatDateTime', () => {
 describe('renderMarkdown', () => {
   it('includes header, stats, summary and one section per group', () => {
     const md = renderMarkdown(buildReport(groups, triage, baseOptions));
-    expect(md).toContain('# Error triage — 2026-09-11 07:00 UTC (last 24h)');
+    expect(md).toContain('# Error triage, 2026-09-11 07:00 UTC (last 24h)');
     expect(md).toContain('Source: json · 16 occurrences in 3 groups');
     expect(md).toContain('Severity: P1 1 · P2 1 · P3 1');
     expect(md).toContain('> Summary text.');
-    expect(md).toContain('## P1 — Title b');
+    expect(md).toContain('## P1: Title b');
     expect(md).toContain('- **Count:** 10 (4 users) · **First seen:** 2026-09-10 07:00');
     expect(md).toContain('- **Count:** 5 · **First seen:**');
-    expect(md).toContain('- **Example:** `msg b — https://e.com/b`');
+    expect(md).toContain('- **Example:** `msg b at https://e.com/b`');
     expect(md).not.toContain('NEW');
   });
 
@@ -103,8 +103,8 @@ describe('renderMarkdown', () => {
       buildReport(groups, triage, { ...baseOptions, previousFingerprints: new Set(['a']) }),
     );
     expect(md).toContain('2 new since last run');
-    expect(md).toContain('## P1 — Title b **NEW**');
-    expect(md).toContain('## P2 — Title a\n');
+    expect(md).toContain('## P1: Title b **NEW**');
+    expect(md).toContain('## P2: Title a\n');
   });
 
   it('handles an empty window', () => {

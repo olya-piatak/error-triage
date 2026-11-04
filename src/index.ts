@@ -13,7 +13,7 @@ import { JsonFileSource } from './sources/json.js';
 import { SourceError } from './sources/types.js';
 import { buildState, readState, writeState } from './state.js';
 
-const USAGE = `error-triage — group production errors, prioritise them with an LLM, post to Slack
+const USAGE = `error-triage: group production errors, prioritise them with an LLM, post to Slack
 
 Usage:
   error-triage run  [--since 24h] [--dry-run] [--out report.md]
