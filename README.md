@@ -1,5 +1,7 @@
 # error-triage
 
+[![ci](https://github.com/olya-piatak/error-triage/actions/workflows/ci.yml/badge.svg)](https://github.com/olya-piatak/error-triage/actions/workflows/ci.yml)
+
 A small TypeScript pipeline that pulls the last day of production errors from PostHog, Sentry or a JSON export, groups them into distinct issues, asks an LLM to prioritise and explain each one, and posts a single report to Slack. Grouping is deterministic and happens before the model sees anything, so the model call stays small and the cost stays flat no matter how noisy the day was.
 
 ## Why

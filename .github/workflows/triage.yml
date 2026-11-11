@@ -24,12 +24,15 @@ concurrency:
 
 jobs:
   triage:
+    # Needs a real source and Slack webhook. Without them the scheduled run is
+    # skipped instead of failing every morning.
+    if: ${{ vars.SOURCE != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -37,7 +40,7 @@ jobs:
       # The state file powers the "NEW" marker. Each run saves it under a fresh
       # key; the next run restores the most recent one via the prefix.
       - name: Restore previous fingerprints
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .triage-state.json
           key: triage-state-${{ github.run_id }}
@@ -73,7 +76,7 @@ jobs:
 
       - name: Keep the report as a build artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: triage-report
           path: report.md
