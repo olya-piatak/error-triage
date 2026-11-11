@@ -24,6 +24,9 @@ concurrency:
 
 jobs:
   triage:
+    # Needs a real source and Slack webhook. Without them the scheduled run is
+    # skipped instead of failing every morning.
+    if: ${{ vars.SOURCE != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
